@@ -17,7 +17,7 @@ namespace DevExp.QLNH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCreateBill());
+            Application.Run(new Form1());
         }
     }
 }

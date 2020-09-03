@@ -15,7 +15,7 @@ namespace DevExp.QLNH.Properties
     {
         
         string connect = @"Data Source=THANHTHU\SQLEXPRESS;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
-        private string p_MaHD;
+        
         
         
         private List<FoodItem> listFI = new List<FoodItem>();
@@ -44,7 +44,7 @@ namespace DevExp.QLNH.Properties
             da.Fill(dt);
             DataRow dr = dt.NewRow();
          
-            dr["Name"] = " ";
+            dr["Name"] = "---- ";
             dt.Rows.InsertAt(dr, 0);
             cbbFood.DataSource = dt;
             cbbFood.ValueMember = "idFood";
@@ -71,7 +71,27 @@ namespace DevExp.QLNH.Properties
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            
+            string p_mahd = txtMaHD.Text;
+            string p_food = cbbFood.SelectedValue.ToString();
+            int p_soluong = Convert.ToInt32(txtSoluong.Text);
+
+            SqlConnection conn = new SqlConnection(connect);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("addBillDetail", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@MaHD", SqlDbType.NVarChar, 50).Value = p_mahd;
+            cmd.Parameters.Add("@idFood", SqlDbType.NVarChar, 50).Value = p_food;
+            cmd.Parameters.Add("@Soluong", SqlDbType.Int).Value = p_soluong;
+
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
             load_gridview();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

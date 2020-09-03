@@ -35,14 +35,15 @@
             this.cbbFood = new System.Windows.Forms.ComboBox();
             this.txtSoluong = new System.Windows.Forms.TextBox();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
+            this.idFood = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuiBep = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.idFood = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnBack = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,6 +113,19 @@
             this.dgvOrder.Size = new System.Drawing.Size(447, 150);
             this.dgvOrder.TabIndex = 8;
             // 
+            // idFood
+            // 
+            this.idFood.DataPropertyName = "idFood";
+            this.idFood.HeaderText = "Name";
+            this.idFood.Name = "idFood";
+            this.idFood.Width = 300;
+            // 
+            // Soluong
+            // 
+            this.Soluong.DataPropertyName = "Soluong";
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.Name = "Soluong";
+            // 
             // btnGuiBep
             // 
             this.btnGuiBep.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -123,7 +137,7 @@
             this.btnGuiBep.AppearancePressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnGuiBep.AppearancePressed.Options.UseBackColor = true;
             this.btnGuiBep.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuiBep.ImageOptions.Image")));
-            this.btnGuiBep.Location = new System.Drawing.Point(642, 261);
+            this.btnGuiBep.Location = new System.Drawing.Point(693, 215);
             this.btnGuiBep.Name = "btnGuiBep";
             this.btnGuiBep.Size = new System.Drawing.Size(100, 50);
             this.btnGuiBep.TabIndex = 11;
@@ -152,6 +166,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnGuiBep);
             this.panel1.Controls.Add(this.dgvOrder);
@@ -161,18 +176,19 @@
             this.panel1.Size = new System.Drawing.Size(881, 450);
             this.panel1.TabIndex = 1;
             // 
-            // idFood
+            // panel2
             // 
-            this.idFood.DataPropertyName = "idFood";
-            this.idFood.HeaderText = "Name";
-            this.idFood.Name = "idFood";
-            this.idFood.Width = 300;
-            // 
-            // Soluong
-            // 
-            this.Soluong.DataPropertyName = "Soluong";
-            this.Soluong.HeaderText = "Số lượng";
-            this.Soluong.Name = "Soluong";
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.txtMaHD);
+            this.panel2.Controls.Add(this.txtSoluong);
+            this.panel2.Controls.Add(this.cbbFood);
+            this.panel2.Controls.Add(this.labelControl6);
+            this.panel2.Controls.Add(this.labelControl5);
+            this.panel2.Location = new System.Drawing.Point(60, 8);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(752, 126);
+            this.panel2.TabIndex = 21;
             // 
             // label4
             // 
@@ -185,19 +201,19 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Mã hóa đơn";
             // 
-            // panel2
+            // btnBack
             // 
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Controls.Add(this.txtMaHD);
-            this.panel2.Controls.Add(this.txtSoluong);
-            this.panel2.Controls.Add(this.cbbFood);
-            this.panel2.Controls.Add(this.labelControl6);
-            this.panel2.Controls.Add(this.labelControl5);
-            this.panel2.Location = new System.Drawing.Point(9, 8);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(747, 126);
-            this.panel2.TabIndex = 21;
+            this.btnBack.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBack.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Appearance.Options.UseBackColor = true;
+            this.btnBack.Appearance.Options.UseForeColor = true;
+            this.btnBack.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.ImageOptions.Image")));
+            this.btnBack.Location = new System.Drawing.Point(693, 315);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(100, 50);
+            this.btnBack.TabIndex = 22;
+            this.btnBack.Text = "Trở lại";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmNewOrder
             // 
@@ -233,5 +249,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
+        private DevExpress.XtraEditors.SimpleButton btnBack;
     }
 }
