@@ -28,13 +28,14 @@ namespace DevExp.QLNH.Properties
         public ucOrder()
         {
             InitializeComponent();
-            load_listview();
+            load_gridview();
+            
         }
-        public void load_listview()
+        public void load_gridview()
         {
             SqlConnection conn = new SqlConnection(connect);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("loadListview", conn);
+            SqlCommand cmd = new SqlCommand("loadgrvHoaDon", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlDataAdapter da = new SqlDataAdapter();
@@ -45,6 +46,8 @@ namespace DevExp.QLNH.Properties
             dgvHoaDon.DataSource = dt;
             dgvHoaDon.Refresh();
         }
+
+        
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -59,11 +62,25 @@ namespace DevExp.QLNH.Properties
 
         private void dgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaHD.Text = dgvHoaDon.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtBan.Text = dgvHoaDon.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtMaHD.Text = dgvHoaDon.CurrentRow.Cells["MaHD"].Value.ToString();
+            txtBan.Text = dgvHoaDon.CurrentRow.Cells["TableName"].Value.ToString();
 
-            txtBan.Enabled = false;
-            txtMaHD.Enabled = false;
+            //txtBan.Enabled = false;
+            //txtMaHD.Enabled = false;
+
+            SqlConnection conn = new SqlConnection(connect);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("Tinhtien", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@MaHD", SqlDbType.NVarChar, 50).Value = txtMaHD.Text;
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dgvDetail.DataSource = dt;
+            dgvDetail.Refresh();
+
         }
 
         private void label1_Click(object sender, EventArgs e)

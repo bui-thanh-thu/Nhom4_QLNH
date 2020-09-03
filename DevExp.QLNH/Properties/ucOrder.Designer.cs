@@ -34,21 +34,22 @@
             this.btnNewOrder = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TableName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBan = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.idFood = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Soluong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Thanhtien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TableName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,7 +100,8 @@
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHD,
-            this.TableName});
+            this.TableName,
+            this.TrangThai});
             this.dgvHoaDon.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvHoaDon.Location = new System.Drawing.Point(0, 62);
             this.dgvHoaDon.Name = "dgvHoaDon";
@@ -107,24 +109,10 @@
             this.dgvHoaDon.TabIndex = 3;
             this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick);
             // 
-            // MaHD
-            // 
-            this.MaHD.DataPropertyName = "MaHD";
-            this.MaHD.HeaderText = "Mã hóa đơn";
-            this.MaHD.Name = "MaHD";
-            this.MaHD.Width = 200;
-            // 
-            // TableName
-            // 
-            this.TableName.DataPropertyName = "TableName";
-            this.TableName.HeaderText = "Bàn";
-            this.TableName.Name = "TableName";
-            this.TableName.Width = 160;
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.listView1);
+            this.panel2.Controls.Add(this.dgvDetail);
             this.panel2.Controls.Add(this.txtBan);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtMaHD);
@@ -168,35 +156,56 @@
             this.txtBan.Size = new System.Drawing.Size(100, 21);
             this.txtBan.TabIndex = 3;
             // 
-            // listView1
+            // dgvDetail
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.idFood,
+            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name,
             this.Soluong,
-            this.Price,
-            this.Thanhtien});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(15, 100);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(389, 97);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.Price});
+            this.dgvDetail.Location = new System.Drawing.Point(15, 104);
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.Size = new System.Drawing.Size(415, 113);
+            this.dgvDetail.TabIndex = 4;
             // 
-            // idFood
+            // MaHD
             // 
-            this.idFood.Text = "Tên món";
+            this.MaHD.DataPropertyName = "MaHD";
+            this.MaHD.HeaderText = "Mã hóa đơn";
+            this.MaHD.Name = "MaHD";
+            this.MaHD.Width = 120;
+            // 
+            // TableName
+            // 
+            this.TableName.DataPropertyName = "TableName";
+            this.TableName.HeaderText = "Bàn";
+            this.TableName.Name = "TableName";
+            this.TableName.Width = 120;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.Width = 120;
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Tên món";
+            this.Name.Name = "Name";
             // 
             // Soluong
             // 
-            this.Soluong.Text = "Số lượng";
+            this.Soluong.DataPropertyName = "Soluong";
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.Name = "Soluong";
             // 
             // Price
             // 
-            this.Price.Text = "Đơn giá";
-            // 
-            // Thanhtien
-            // 
-            this.Thanhtien.Text = "Thành tiền";
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Đơn giá";
+            this.Price.Name = "Price";
             // 
             // ucOrder
             // 
@@ -205,13 +214,14 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvHoaDon);
             this.Controls.Add(this.panel1);
-            this.Name = "ucOrder";
+          
             this.Size = new System.Drawing.Size(847, 465);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,17 +233,17 @@
         private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraEditors.SimpleButton btnNewOrder;
         private System.Windows.Forms.DataGridView dgvHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TableName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.TextBox txtBan;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader idFood;
-        private System.Windows.Forms.ColumnHeader Soluong;
-        private System.Windows.Forms.ColumnHeader Price;
-        private System.Windows.Forms.ColumnHeader Thanhtien;
+        private System.Windows.Forms.DataGridView dgvDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TableName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }
