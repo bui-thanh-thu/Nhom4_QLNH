@@ -56,7 +56,7 @@ namespace DevExp.QLNH.Properties
             delPassData del = new delPassData(form.funData);
             del(this.txtMaHD);
             form.Show();
-
+            this.Close();
 
         }
     }

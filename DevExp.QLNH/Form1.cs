@@ -22,6 +22,7 @@ namespace DevExp.QLNH
         {
             frmHome frm = new frmHome();
             frm.Show();
+           
         }
     }
 }

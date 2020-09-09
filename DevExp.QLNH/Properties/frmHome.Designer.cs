@@ -54,7 +54,7 @@
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(172, 31);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(687, 494);
+            this.container.Size = new System.Drawing.Size(618, 494);
             this.container.TabIndex = 0;
             // 
             // accordionControl1
@@ -181,7 +181,7 @@
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(859, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(790, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
@@ -189,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 525);
+            this.ClientSize = new System.Drawing.Size(790, 525);
             this.ControlContainer = this.container;
             this.Controls.Add(this.container);
             this.Controls.Add(this.accordionControl1);
@@ -197,6 +197,7 @@
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.Name = "frmHome";
             this.NavigationControl = this.accordionControl1;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HOME";
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();

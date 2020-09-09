@@ -70,6 +70,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCapnhatOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCapnhatOrder.Designer.cs">
+      <DependentUpon>frmCapnhatOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCapnhatOrder.resx">
+      <DependentUpon>frmCapnhatOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\frmCreateBill.resx">
       <DependentUpon>frmCreateBill.cs</DependentUpon>
